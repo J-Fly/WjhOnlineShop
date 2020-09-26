@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+	id="WebApp_ID" version="3.1">
+	<display-name>WjhOnlineShop</display-name>
+	<session-config>
+		<session-timeout>-1</session-timeout>
+	</session-config>
+	<filter>
+		<filter-name>EncodingFilter</filter-name>
+		<filter-class>filter.EncodingFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>EncodingFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+<!-- 	<filter> -->
+<!-- 		<filter-name>FrontLoginFilter</filter-name> -->
+<!-- 		<filter-class>filter.FrontLoginFilter</filter-class> -->
+<!-- 	</filter> -->
+<!-- 	<filter-mapping> -->
+<!-- 		<filter-name>FrontLoginFilter</filter-name> -->
+<!-- 		<url-pattern>/guest/*</url-pattern> -->
+<!-- 		<dispatcher>REQUEST</dispatcher> -->
+<!-- 		<dispatcher>FORWARD</dispatcher> -->
+<!-- 	</filter-mapping> -->
+	<filter>
+		<filter-name>IsLoginFilter</filter-name>
+		<filter-class>filter.IsLoginFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>IsLoginFilter</filter-name>
+		<url-pattern>/admin/*</url-pattern>
+		<dispatcher>REQUEST</dispatcher>
+		<dispatcher>FORWARD</dispatcher>
+	</filter-mapping>
+	<welcome-file-list>
+		<welcome-file>index.jsp</welcome-file>
+	</welcome-file-list>
+</web-app>

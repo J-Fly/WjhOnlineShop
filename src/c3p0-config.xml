@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<c3p0-config>
+	<!-- 这是默认配置信息 -->
+	<default-config>
+		<!-- 连接四大参数配置 -->
+		<property name="jdbcUrl">jdbc:mysql://localhost:3306/dfrz_olshop</property>
+		<property name="driverClass">com.mysql.jdbc.Driver</property>
+		<property name="user">root</property>
+		<property name="password">admin</property>
+		<!-- 池参数配置 -->
+		<property name="acquireIncrement">3</property><!-- 链接用完自动增加3个 -->
+		<property name="initialPoolSize">15</property>
+		<property name="minPoolSize">2</property>
+		<property name="maxPoolSize">30</property>
+		<property name="checkoutTimeout">3000</property><!-- 超时时间 -->
+	</default-config>
+</c3p0-config>
